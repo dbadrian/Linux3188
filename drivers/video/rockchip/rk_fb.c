@@ -400,6 +400,7 @@ static int rk_fb_ioctl(struct fb_info *info, unsigned int cmd,unsigned long arg)
 static int rk_fb_blank(int blank_mode, struct fb_info *info)
 {
     	struct rk_lcdc_device_driver *dev_drv = (struct rk_lcdc_device_driver * )info->par;
+	struct rk_fb_inf *inf = dev_get_drvdata(info->device);
 	struct fb_fix_screeninfo *fix = &info->fix;
 	int layer_id;
 	
